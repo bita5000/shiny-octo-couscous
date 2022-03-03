@@ -7,14 +7,43 @@
 
     <body>
         <h1><a href="hello.html">index</a></h1>
-        <input type="button" value="night" onclick="
+        <!--<input type="button" value="night" onclick="
             document.querySelector('body').style.backgroundColor='#000';
             document.querySelector('body').style.color='#fff';
         ">
         <input type="button" value="day" onclick="
             document.querySelector('body').style.backgroundColor='#fff';
             document.querySelector('body').style.color='#000';
+        ">-->
+        <input id="mode" type="button" value="night" onclick="
+            var target = document.querySelector('body');
+            if (this.value === 'night') {
+                target.style.backgroundColor='#000';
+                target.style.color='#fff';
+                this.value = 'day';
+
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length) {
+                alist[i].style.color = 'powderblue';
+                i+=1;
+            }
+            } else {
+                target.style.backgroundColor='#fff';
+                target.style.color='#000';
+                this.value = 'night';
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length) {
+                    alist[i].style.color = 'blue';
+                    i+=1;
+                }
+            }
+
+            
         ">
+
+
         <ul>
             <li><a href="1.html">HTML</a></li>
             <li><a href="2.html">CSS</a></li>
